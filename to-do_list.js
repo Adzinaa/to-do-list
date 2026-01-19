@@ -4,11 +4,22 @@ const arrowIcon = document.querySelector('.arrow-icon');
 
 function updateArrowState() {
     const allTasks = document.querySelectorAll('.task-item');
+    const footer = document.getElementById('todo-footer');
+    const todoCount = document.getElementById('todo-count');
+
 
     if (allTasks.length === 0) {
         arrowIcon.classList.remove('active');
+        footer.style.display = 'none';
         return;
+    } else {
+        footer.style.display = 'flex';
     }
+
+    //calc cate taskuri nu s complete
+    const incompleteTasks = Array.from(allTasks).filter(task => !task.classList.contains('completed'));
+    const count = incompleteTasks.length;
+    todoCount.textContent = `${count} ${count === 1 ? 'item' : 'items'} left`;
 
     const allCompleted = Array.from(allTasks).every(task => task.classList.contains('completed'));
 
@@ -75,3 +86,5 @@ function addTask(text) {
     todoList.appendChild(taskItem);
     updateArrowState();
 }
+
+updateArrowState();

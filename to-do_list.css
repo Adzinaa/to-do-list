@@ -62,11 +62,7 @@ html {
     border: none;
     background-color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/*sa sesiseze cand apas in interoriul task boxului*/
-.task-box:focus-within {
-    border-color: rgb(203,45,62);
+    border-bottom: 1px solid rgb(200, 200, 200);
 }
 
 .input-text {
@@ -190,6 +186,41 @@ html {
 .delete-btn:hover {
     color: rgb(203, 45, 62);
 }
+
+/* FOOTER */
+
+.footer-style {
+    display: none; /* Ascuns implicit */
+    height: 40px;
+    background-color: white;
+    border-top: 1px solid rgb(200, 200, 200);
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+    color: black;
+    font-size: 0.9rem;
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 
+                0 8px 0 -3px #f6f6f6, 
+                0 9px 1px -3px rgba(0, 0, 0, 0.2), 
+                0 16px 0 -6px #f6f6f6, 
+                0 17px 2px -6px rgba(0, 0, 0, 0.2)
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+}   
+
+.footer-middle {
+    text-align: center;
+}
+
+.footer-right {
+    text-align: right;
+}
+
 
 /* COLORS */
 
