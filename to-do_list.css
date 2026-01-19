@@ -221,6 +221,25 @@ html {
     text-align: right;
 }
 
+#clear-completed {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    visibility: hidden;
+}
+
+#clear-completed.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#clear-completed:hover {
+    text-decoration: underline;
+}
+
 
 /* COLORS */
 

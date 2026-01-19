@@ -1,6 +1,7 @@
 const input = document.querySelector('.todo-input');
 const todoList = document.getElementById('todo-list');
 const arrowIcon = document.querySelector('.arrow-icon');
+const clearBtn = document.getElementById('clear-completed')
 
 function updateArrowState() {
     const allTasks = document.querySelectorAll('.task-item');
@@ -30,7 +31,25 @@ function updateArrowState() {
     } else {
         arrowIcon.classList.remove('active');
     }
+
+    // clear completed
+    const completedTasksExist = Array.from(allTasks).some(task => task.classList.contains('completed'));
+    
+    if (completedTasksExist) {
+        clearBtn.classList.remove('hidden');
+        clearBtn.classList.add('show');
+    } else {
+        clearBtn.classList.add('hidden');
+        clearBtn.classList.remove('show');
+    }
 }
+
+clearBtn.addEventListener('click', function() {
+    const completedTasks = document.querySelectorAll('.task-item.completed');
+    completedTasks.forEach(task => task.remove());
+    
+    updateArrowState();
+});
 
 arrowIcon.addEventListener('click', function() {
     const allTasks = document.querySelectorAll('.task-item');
