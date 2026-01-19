@@ -55,6 +55,74 @@ html {
     font-weight: 300;
 }
 
+.todo-input {
+    border: none;
+    outline: none; /* sa elimin chenarul at cand dau click */
+    background: transparent;
+
+    width: 100%;  /*ocup tot spatiul dupa sageata*/
+    height: 100%;
+
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: 300;
+    color: #4d4d4d;
+}
+
+.todo-input::placeholder {
+    font-style: italic;
+    color: rgb(230, 230, 230);
+}
+
+/* new styke for the added row */
+.task-item {
+    display: flex;
+    align-items: flex-start;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border-top: 1px solid #ededed;
+    background-color: white;
+    word-break: break-word; /*fortez ruperea cuvintelor f lungi*/
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.task-text-display {
+    font-size: 1.5rem;
+    color: #4d4d4d;
+    font-weight: 300;
+    line-height: 1.2;
+
+    white-space: normal;     
+    overflow-wrap: anywhere; 
+    flex: 1;
+}
+
+.circle-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    border: 1px solid #e6e6e6;
+    border-radius: 50%;
+
+    margin-top: 5px;
+    margin-right: 20px;
+    
+    cursor: pointer;
+    display: inline-block;
+
+    /* pentru a preveni deformarea textului daca e prea lung */
+    flex-shrink: 0;
+}
+
 /* COLORS */
 
 .red-brown-color {
