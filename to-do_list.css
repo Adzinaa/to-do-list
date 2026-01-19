@@ -1,0 +1,72 @@
+html {
+    padding: 2%;
+    background-color: rgb(246, 246, 246);
+    font-family: sans-serif;
+}
+
+.shape-rectangle {
+    display: block;
+    width: 50%; 
+
+    min-height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task-box {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.title-font {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: normal;
+
+    margin-bottom: 30px; 
+    /* distanta de jos de unde incepe chenarul */
+
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    display: block;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    border: none;
+    height: 80px;
+    padding-left: 20px;
+}
+
+
+.arrow-icon {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    transform: rotate(90deg);  
+    display: inline-block;
+}
+
+.input-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* COLORS */
+
+.red-brown-color {
+    color: rgb(203,45,62);
+}
+
+.very-light-gray {
+    color: rgb(200, 200, 200);
+}
+
+.dark-gray {
+    color: rgb(129,129,129);
+}
+
+
