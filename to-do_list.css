@@ -13,11 +13,6 @@ html {
     margin-right: auto;
 }
 
-.task-box {
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
 .title-font {
     text-align: center;
     font-size: 6rem;
@@ -36,9 +31,16 @@ html {
 .input-row {
     display: flex;
     align-items: center;
-    border: none;
+
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+
     height: 80px;
     padding-left: 20px;
+}
+
+.input-row:focus-within {
+    border-color: rgb(203, 45, 62);
 }
 
 
@@ -47,6 +49,17 @@ html {
     margin-right: 20px;
     transform: rotate(90deg);  
     display: inline-block;
+}
+
+.task-box {
+    border: none;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*sa sesiseze cand apas in interoriul task boxului*/
+.task-box:focus-within {
+    border-color: rgb(203,45,62);
 }
 
 .input-text {
@@ -79,14 +92,17 @@ html {
     display: flex;
     align-items: flex-start;
 
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 25px 20px;
 
-    border-top: 1px solid #ededed;
-    background-color: white;
+    border: 2px solid transparent;
+    border-top: 1px solid #ededed; /*linie fina intre taskuri*/
+    transition: border-color 0.2s ease;
+
     word-break: break-word; /*fortez ruperea cuvintelor f lungi*/
+}
+
+.task-item:focus-within {
+    border: 2px solid rgb(203, 45, 62); 
 }
 
 .task-content {
@@ -115,12 +131,16 @@ html {
 
     margin-top: 5px;
     margin-right: 20px;
-    
+
     cursor: pointer;
     display: inline-block;
 
     /* pentru a preveni deformarea textului daca e prea lung */
     flex-shrink: 0;
+}
+
+.circle-icon:focus {
+    outline: none;
 }
 
 /* COLORS */

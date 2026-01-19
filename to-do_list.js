@@ -18,7 +18,7 @@ function addTask(text) {
 
     taskItem.innerHTML = `
         <div class="task-content">
-            <span class="circle-icon"></span> 
+            <span class="circle-icon" tabindex="0"></span> 
             <span class="task-text-display">${text}</span>
         </div>
     `;
