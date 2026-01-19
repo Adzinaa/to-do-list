@@ -1,7 +1,39 @@
 const input = document.querySelector('.todo-input');
 const todoList = document.getElementById('todo-list');
 const arrowIcon = document.querySelector('.arrow-icon');
-const clearBtn = document.getElementById('clear-completed')
+const clearBtn = document.getElementById('clear-completed');
+const filterBtns = document.querySelectorAll('.filter-btn');
+let currentFilter = 'all'; // retin filtrul activ
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+
+        currentFilter = btn.getAttribute('data-filter');
+        applyFilter();
+    });
+});
+
+function applyFilter() {
+    const allTasks = document.querySelectorAll('.task-item');
+
+    allTasks.forEach(task => {
+        const isCompleted = task.classList.contains('completed');
+
+        switch (currentFilter) {
+            case 'all':
+                task.style.display = 'block';
+                break;
+            case 'active':
+                task.style.display = isCompleted ? 'none' : 'block';
+                break;
+            case 'completed':
+                task.style.display = isCompleted ? 'block' : 'none';
+                break;
+        }
+    });
+}
 
 function updateArrowState() {
     const allTasks = document.querySelectorAll('.task-item');
