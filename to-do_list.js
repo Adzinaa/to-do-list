@@ -9,10 +9,12 @@ function updateArrowState() {
 
 
     if (allTasks.length === 0) {
-        arrowIcon.classList.remove('active');
         footer.style.display = 'none';
+        arrowIcon.style.display = 'none';
+        arrowIcon.classList.remove('active');
         return;
     } else {
+        arrowIcon.style.display = 'inline-block';
         footer.style.display = 'flex';
     }
 

@@ -47,7 +47,7 @@ html {
     font-size: 1.5rem;
     margin-right: 20px;
     transform: rotate(90deg);  
-    display: inline-block;
+    display: none;
     cursor: pointer;
 
     /*impiedic selectarea la click repetat*/
