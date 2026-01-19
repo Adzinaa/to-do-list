@@ -33,7 +33,6 @@ html {
     align-items: center;
 
     border: 2px solid transparent;
-    transition: border-color 0.2s ease;
 
     height: 80px;
     padding-left: 20px;
@@ -49,6 +48,14 @@ html {
     margin-right: 20px;
     transform: rotate(90deg);  
     display: inline-block;
+    cursor: pointer;
+
+    /*impiedic selectarea la click repetat*/
+    user-select: none;
+}
+
+.arrow-icon.active{
+    color: black;
 }
 
 .task-box {
@@ -96,13 +103,27 @@ html {
 
     border: 2px solid transparent;
     border-top: 1px solid #ededed; /*linie fina intre taskuri*/
-    transition: border-color 0.2s ease;
 
     word-break: break-word; /*fortez ruperea cuvintelor f lungi*/
 }
 
 .task-item:focus-within {
     border: 2px solid rgb(203, 45, 62); 
+}
+
+.task-item.completed .task-text-display {
+    text-decoration: line-through; /* Taie textul cu o linie */
+    color: rgb(200, 200, 200);
+}
+
+/*before => pseudo-element pentru a insera elementul inauntru*/
+.task-item.completed .circle-icon::before {
+    content: "\2713"; /*cod unicode pentru bifa*/ 
+    color: #125c2f;
+}
+
+.task-item.completed .circle-icon {
+    border-color: #125c2f;
 }
 
 .task-content {
@@ -137,10 +158,37 @@ html {
 
     /* pentru a preveni deformarea textului daca e prea lung */
     flex-shrink: 0;
+
+    /*pentru bifa*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
 }
 
 .circle-icon:focus {
     outline: none;
+}
+
+.delete-btn {
+    margin-left: auto;
+    color: rgb(129,129,129);;
+    font-size: 2rem;
+
+    cursor: pointer;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    opacity: 0;
+
+    padding-right: 10px;
+    line-height: 1;
+}
+
+.task-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    color: rgb(203, 45, 62);
 }
 
 /* COLORS */
